@@ -35,7 +35,8 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install PostCSS CLI
         run: |
-          npm install -g postcss-cli
+          sudo npm install -g postcss-cli &&
+          sudo npm install -g autoprefixer
       - name: Checkout
         uses: actions/checkout@v3
         with:
