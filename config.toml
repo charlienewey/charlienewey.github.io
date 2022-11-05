@@ -11,6 +11,14 @@ DefaultContentLanguage           = "en"                    # Default language fo
     fadeInIndex                  = false                   # Turn on/off the fade-in effect on the index page even if fade-in was otherwise turned off
     dateFormat                   = "Jan 2, 2006"
     email                        = "contact@newey.me"      # E-mail address for contact section
+    customCSS                    = [
+        "katex.min.css"
+    ]
+    customJS                     = [
+        "katex.min.js",
+        "use-katex.js",
+        "contrib/auto-render.min.js"
+    ]
 
     # Configure the home page
     [params.home]
