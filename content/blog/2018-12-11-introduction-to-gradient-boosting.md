@@ -192,7 +192,7 @@ plateau by around the 30th boosting iteration - but training error continues to
 reduce (albeit, rather slowly) up to the 80th or even 100th iteration (note that
 over-training actually has a *negative* impact on validation error, too).
 
-![Training vs. validation error](/images/gradient_boosting_validation_error.png)
+![Training vs. validation error](/images/gradient-boosting-validation-error.png)
 
 
 ## In closing
