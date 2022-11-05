@@ -1,5 +1,5 @@
 ---
-title: Making a Mosaic from Random Images
+title: Making a mosaic from random i    mages
 date: 2016-04-03 16:32:33.000000000 +01:00
 meta: true
 ---
