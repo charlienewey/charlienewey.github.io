@@ -71,30 +71,28 @@ Using Gauss' formula, area of this triangle is computed like so;
 Adding all of these areas together gives and dividing by two results in an area
 of $7.5$. We can verify this quite easily: $\frac{1}{2} (5 \times 3) = 7.5$.
 This is a bit over-complicated for a triangle - but this method works just as
-well on polygons with an arbitrary number of sides! *"But wait"*, I hear you
-say, *"you can't have a negative area!"*. The answer to that question is easy -
+well on polygons with an arbitrary number of vertices.
+
+You may have noticed that one of the areas above is negative. The reason is that
 the quantity $(x_{n-1}y_{n}) - (x_{n}y_{n-1})$ simply describes the rectangle
 that has one particular vertex at its *top right*, and another at its *bottom
-left*.
+left*. For the right-angled triangle shown above, the area given by
+$(x_{n-1}y_{n}) - (x_{n}y_{n-1})$ defines the rectangle with vertex $b$ at its
+lower left, and vertex $d$ at its upper right. Dividing this area by two gives
+the area of triangle $abc$.
 
-For the right-angled triangle shown above, the area given by $(x_{n-1}y_{n}) -
-(x_{n}y_{n-1})$ defines the rectangle with vertex $b$ at its lower left, and
-vertex $d$ at its upper right. Dividing this area by two gives the area of
-triangle $abc$.
-
-
-So what about a more complex polygon? The same procedure applies, but the key
-difference is that it gets broken up into right-angled triangles first!
+So what about a more complex polygon? The same procedure applies, but the shape
+gets broken up into right-angled triangles first.
 
 ![A quadrilateral broken up into right-angled
 triangles](/images/complex-polygon.png)
 
 ---
 
-So there we have it - now you have an understanding of how Gauss' shoelace
-formula works. It's marvellously compact for (what I consider to be) such a neat
-piece of geometric reasoning. When implementing this in a programming language
-that supports vectorisation, it boils down to just four lines of code...
+So there we have it - Gauss' shoelace algorithm. It's so compact and elegant for
+such a neat piece of geometric reasoning. When implementing this in a
+programming language that supports vectorisation, it boils down to just four
+lines of code...
 
 ```python
 # See https://stackoverflow.com/a/49129646/2321244

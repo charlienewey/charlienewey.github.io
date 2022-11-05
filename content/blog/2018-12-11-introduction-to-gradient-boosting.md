@@ -5,13 +5,9 @@ meta: true
 math: true
 ---
 
-Well, it's pretty much all in the title. Gradient boosting is one of those
-unavoidable algorithms if you're a data science professional - it's very common,
-fast, lightweight, and capable of exceptional accuracy when tuned correctly.
-There's been renewed enthusiasm for gradient boosting algorithms with the advent
-of popular frameworks like XGBoost and LightGBM, and they get used for almost
-everything - so much so that it's difficult to find a Kaggle competition winner
-that doesn't use some form of gradient boosting.
+Gradient boosting is one of those unavoidable algorithms if you're a data
+scientist or ML practitioner - it's very common, fast, lightweight, and capable
+of exceptional performance when tuned correctly. So how does it work?
 
 <!-- more -->
 
@@ -49,10 +45,10 @@ their paper;
 
 In theory, almost any PAC model can be used as a "base learner" in gradient
 boosting - but note that, in practice, decision trees are *almost always* the
-chosen algorithm. I suspect this is for several reasons; trees are *really*
-fast to train, it's very easy to restrict their complexity (e.g. limiting depth
-or the number of leaves), and they're pretty lightweight in terms of memory
-requirements - which makes them ideal for using in ensemble.
+chosen algorithm. This is for several reasons; trees are *really* fast to train,
+it's very easy to restrict their complexity (e.g. limiting depth or the number
+of leaves), and they're pretty lightweight in terms of memory requirements -
+which makes them ideal for using in ensemble.
 
 
 ## A bit of history: AdaBoost
@@ -120,7 +116,7 @@ $$
 In his paper "Arcing the Edge"[^4], Leo Breiman noted the observation that
 boosting can be viewed as performing gradient descent on some cost function. I
 struggled with this idea at first because it's counter-intuitive (gradient
-descent with decision trees?!), but it's absolutely correct. The idea of using
+descent with decision trees?), but it's absolutely correct. The idea of using
 gradients as "pseudo-residuals" was further refined by Friedman[^5] in 1999, who
 ended up writing the canonical paper on gradient boosting.
 
@@ -131,7 +127,7 @@ covered in more detail in Friedman, 1999[^5]). Just take the derivative of the
 squared error function with regards to $r _ {t}$, and you're left with the
 gradient vector - which points uphill in the direction of steepest incline.
 Flipping the sign on this vector then will point *downhill* in the steepest
-direction - thus, gradient descent!
+direction - thus, gradient descent.
 
 $$
 \begin{aligned}
@@ -183,7 +179,7 @@ previous learners have made, running gradient boosting for too many iterations
 typically leads to a highly overfitted model. The best solution is to split your
 data into *three* sets, instead of the usual two; train, test, and *validation*.
 The validation set error should be separate from the training set (i.e. don't
-use your validation set for training!), and the error should be evaluated after
+use your validation set for training), and the error should be evaluated after
 every boosting iteration. What you can do is stop boosting once your training
 error begins to converge on your validation error - any further boosting is
 likely to stop your boosted model's ability to generalise to new examples.
@@ -194,7 +190,7 @@ held back a portion of the dataset for validation, and plotted training and
 validation error on each iteration. As you can see, validation error seems to
 plateau by around the 30th boosting iteration - but training error continues to
 reduce (albeit, rather slowly) up to the 80th or even 100th iteration (note that
-over-training actually has a *negative* impact on validation error, too!).
+over-training actually has a *negative* impact on validation error, too).
 
 ![Training vs. validation error](/images/gradient_boosting_validation_error.png)
 
@@ -210,7 +206,8 @@ objective functions designed specifically for the application at hand.
 Lots of outliers? No problem, just choose absolute error or Huber loss! Building
 a binary classifier? No problem, just use the zero-one loss. A probabilistic
 classifier? Use log-loss or hinge loss! This is what makes gradient boosting so
-flexible, and so powerful - and why it wins so many Kaggle competitions.
+flexible, and so powerful - and why it has earned its place in many
+practitioners' hearts as the "sensible default".
 
 
 [^1]: [Freund and Schapire, "A Short Introduction to Boosting"][1]
