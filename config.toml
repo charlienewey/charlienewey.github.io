@@ -62,7 +62,7 @@ DefaultContentLanguage           = "en"                    # Default language fo
         icon  = "github" # icon name without the 'fa-'
         icon_pack = "fab"
     [[params.social]]
-        url   = "https://linkedin.com/charlesnewey/"
+        url   = "https://www.linkedin.com/in/charlesnewey/"
         icon  = "linkedin-in" # icon name without the 'fa-'
         icon_pack = "fab"
     [[params.social]]
